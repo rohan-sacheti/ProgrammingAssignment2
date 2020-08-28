@@ -29,6 +29,17 @@
 ## Set method for the inverse
 ## Get method for the inverse
 
+# @param x is a matrix
+# @return matrix object
+
+# example input
+## > A
+##    [,1] [,2] [,3]
+## a1    3    2    5
+## a2    2    3    2
+## a3    5    2    4
+## > a = makeCacheMatrix(A)
+
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL;
 
@@ -51,7 +62,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## @param x is the matrix object
+## returns the inverse of the matrix
 ## This function returns the inverse of a matrix object
 ## It caches the calculated value and returns it when called multiple times
 
@@ -66,7 +78,7 @@ cacheSolve <- function(x, ...) {
         }
 
         data <- x$get()
-        inv <- solve(data)
+        inv <- solve(data, ...)
         x$setInverse(inv)
         inv
 }
